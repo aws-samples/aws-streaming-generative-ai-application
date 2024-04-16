@@ -1,4 +1,4 @@
-# streaming-generative-ai-application
+# Streaming Generative AI Application on AWS
 
 ## Overview 
 
