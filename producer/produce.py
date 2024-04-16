@@ -1,10 +1,6 @@
 import boto3
 import json
 import time
-import os
-import glob
-import random
-import uuid
 import gzip
 from botocore.exceptions import ClientError
 
