@@ -77,7 +77,7 @@ arn:aws:cloudformation:us-east-1:<AWS Account ID>:stack/StreamingGenerativeAISta
 
 5. Establish connection to the OpenSearch cluster:
 
-_For Mac:_
+_For Linux/Mac:_
 
 Run the following command to establish connection to OpenSearch in a separate terminal window. The command can be found as output `accessOpenSearchClusterOutput`:
 
@@ -98,7 +98,7 @@ aws ssm start-session ^
 
 6. Create the required index in Amazon OpenSearch:
 
-For Linux/Mac:
+_For Linux/Mac:_
 
 ```bash
 curl --location -k --request PUT https://localhost:8157/processed_reviews \
@@ -116,7 +116,7 @@ curl --location -k --request PUT https://localhost:8157/processed_reviews \
 }'
 ```
 
-For Windows Powershell (Note: Ensure you are using Powershell 7+):
+_For Windows: (Note: Ensure you are using Powershell 7+):_
 ```bash
 $url = "https://localhost:8157/processed_reviews"
 $headers = @{
