@@ -41,7 +41,7 @@ To gain access to the OpenSearch Dashboard, we need to use a bastion host that i
 1. Clone the repository to your desired workspace:
 
 ```bash
-git clone ...
+git clone https://github.com/aws-samples/aws-streaming-generative-ai-application.git
 ```
 
 2. Move to the flink-async-bedrock directory and build the JAR file:
