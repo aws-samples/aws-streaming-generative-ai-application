@@ -90,7 +90,7 @@ def main():
             review_batch = []
             
             print(f'Sent {BATCH_SIZE} review(s)!')
-            time.sleep(5)
+            time.sleep(10)
 
         
 if __name__ == '__main__':
