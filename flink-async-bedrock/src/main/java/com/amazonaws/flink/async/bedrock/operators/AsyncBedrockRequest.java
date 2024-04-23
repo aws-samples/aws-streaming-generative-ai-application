@@ -58,7 +58,7 @@ public class AsyncBedrockRequest extends RichAsyncFunction<Review, ProcessedRevi
 
         String reviewText = review.getText();
 
-        String systemPrompt = "Summarize the review within the <review> tags into a single sentence alongside the sentiment that is either positive or negative. Return a valid JSON object with following keys: summary, sentiment. <example> {\\\"summary\\\": \\\"Boris Karloff gives an odd performance in this dull, confusing mess of a movie with multiple plotlines that go nowhere.\\\", \\\"sentiment\\\": \\\"negative\\\"} </example>";
+        String systemPrompt = "Summarize the review within the <review> tags into a single and concise sentence alongside the sentiment that is either positive or negative. Return a valid JSON object with following keys: summary, sentiment. <example> {\\\"summary\\\": \\\"The reviewer is highly satisfied with the product, having enjoyed it repeatedly to the point of wearing out the initial cassette copy, and has now purchased the CD version, expressing a desire to own a DVD version if available.\\\", \\\"sentiment\\\": \\\"negative\\\"} </example>";
 
         JSONObject user_message = new JSONObject()
             .put("role", "user")
