@@ -53,7 +53,7 @@ cd flink-async-bedrock && mvn clean package
 3. Afterwards move back to the root of the directory, and then to the cdk directory to deploy the resources in your AWS account. *Note that you have configured the AWS CLI before with your credentials (for more info see [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)).*
 
 ```bash
-cd cdk && cdk deploy
+cd cdk && npm install & cdk deploy
 ```
 
 4. Take note of the output values. The output will similar to the output below:
