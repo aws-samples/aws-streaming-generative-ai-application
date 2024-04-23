@@ -140,7 +140,7 @@ Invoke-RestMethod -Method Put -Uri $url -Headers $headers -Body $body -SkipCerti
 7. Open the OpenSearch Dashboard: 
 
 - Open your browser and access `https://localhost:8157/_dashboards`
-- Open the menu and click on *Stack Management*, then click on *Saved Objects* and import *export.ndjson* which can be found in the `resources` folder.
+- Open the menu and click on *Dashboards Management* under *Management*, then click on *Saved Objects* and import *export.ndjson* which can be found in the `resources` folder.
 
 8. Download a subset of the the Amazon Review Data [here](https://jmcauley.ucsd.edu/data/amazon_v2/categoryFilesSmall/Movies_and_TV_5.json.gz). The category is `Movie and TV`. 
 
