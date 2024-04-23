@@ -4,7 +4,7 @@ import { CustomResource, Duration, RemovalPolicy, StackProps, CfnOutput, Aws, St
 import { PolicyStatement, CfnServiceLinkedRole, AnyPrincipal, Role, ServicePrincipal} from "aws-cdk-lib/aws-iam";
 import { IAMClient, ListRolesCommand } from "@aws-sdk/client-iam";
 import { Domain, EngineVersion } from "aws-cdk-lib/aws-opensearchservice";
-import { Vpc, SubnetType, SecurityGroup, Port, BastionHostLinux, MachineImage } from "aws-cdk-lib/aws-ec2";
+import { Vpc, SubnetType, SecurityGroup, Port, BastionHostLinux, MachineImage, EbsDeviceVolumeType } from "aws-cdk-lib/aws-ec2";
 import { BlockDeviceVolume, InterfaceVpcEndpoint, InterfaceVpcEndpointAwsService, Peer } from "aws-cdk-lib/aws-ec2";
 import { join as pathJoin } from "path";
 import { Runtime as LambdaRuntime, Code as LambdaCode, Function } from "aws-cdk-lib/aws-lambda";
@@ -183,28 +183,33 @@ export class MainStack extends Stack {
 
         // OpenSearch domain
         const domain = new Domain(this, "Domain", {
-                version: EngineVersion.OPENSEARCH_1_3,
-                nodeToNodeEncryption: true,
-                enforceHttps: true,
-                domainName: props.openSearchDomainName,
-                encryptionAtRest: {
-                enabled: true,
-            },
-            vpc: vpc,
-            capacity: {
-                dataNodes: 2,
-                dataNodeInstanceType: "m5.xlarge.search"
-            },
-            ebs: {
-                volumeSize: 100,
-            },
-            removalPolicy: RemovalPolicy.DESTROY,
-            zoneAwareness: {
-                enabled: true,
-            },
-            securityGroups: [opensearchSecurityGroup],
-            offPeakWindowEnabled: true
-        });
+            version: EngineVersion.OPENSEARCH_2_11,
+            nodeToNodeEncryption: true,
+            enforceHttps: true,
+            domainName: props.openSearchDomainName,
+            encryptionAtRest: {
+            enabled: true,
+        },
+        vpc: vpc,
+        capacity: {
+            dataNodes: 2,
+            masterNodes: 0, 
+            dataNodeInstanceType: 'r6g.large.search',
+            multiAzWithStandbyEnabled: false
+        },
+        ebs: {
+            volumeSize: 30,
+            volumeType: EbsDeviceVolumeType.GP3,
+            throughput: 125,
+            iops: 3000
+          },
+        removalPolicy: RemovalPolicy.DESTROY,
+        zoneAwareness: {
+            enabled: true,
+        },
+        securityGroups: [opensearchSecurityGroup],
+        offPeakWindowEnabled: true
+    });
         
         domain.addAccessPolicies(
             new PolicyStatement({
