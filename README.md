@@ -27,14 +27,10 @@ To gain access to the OpenSearch Dashboard, we need to use a bastion host that i
 * [Python 3.9 or later](https://www.python.org/downloads/)
 * [Session Manager Plugin](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html) (Session Manager Plugin is required for access to OpenSearch Dashboards using Session Manager)
 * Model access to Anthropic's Claude 3 Haiku model. For setup instructions, refer to [Add model access](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html) in the documentation of Amazon Bedrock.
-* [Amazon Review Data (2018)](https://nijianmo.github.io/amazon/index.html)
-
-    ***Justifying recommendations using distantly-labeled reviews and fined-grained aspects**
-    Jianmo Ni, Jiacheng Li, Julian McAuley
-    Empirical Methods in Natural Language Processing (EMNLP), 2019*
+* [Large Movie Review Dataset](https://ai.stanford.edu/~amaas/data/sentiment/)
 
 
-
+    *Andrew L. Maas, Raymond E. Daly, Peter T. Pham, Dan Huang, Andrew Y. Ng, and Christopher Potts. (2011). [Learning Word Vectors for Sentiment Analysis](https://ai.stanford.edu/~amaas/papers/wvSent_acl2011.pdf). The 49th Annual Meeting of the Association for Computational Linguistics (ACL 2011)*
 
 ## Getting Started
 
@@ -172,9 +168,10 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 
 ## License
 
-This library is licensed under the MIT-0 License. See the LICENSE file.
+This library is licensed under the MIT-0 License. See the LICENSE file. 
 
 ## Authors
 
 - [Michelle Pfister](https://github.com/meilipfi)
 - [Felix John](https://github.com/Madabaru)
+
