@@ -138,7 +138,7 @@ Invoke-RestMethod -Method Put -Uri $url -Headers $headers -Body $body -SkipCerti
 - Open the menu and click on *Dashboards Management* under *Management*, then click on *Saved Objects* and import *export.ndjson* which can be found in the `resources` folder.
 
 8. Download the review data [here]([https://jmcauley.ucsd.edu/data/amazon_v2/categoryFilesSmall/Movies_and_TV_5.json.gz](https://ai.stanford.edu/~amaas/data/sentiment/)).
-9. After the download is complete, extract the `.tar.gz` file to retrieve the folder named `aclImdb 3` or similar that contains the review data.
+9. After the download is complete, extract the `.tar.gz` file to retrieve the folder named `aclImdb 3` or similar that contains the review data. Rename the review data folder to `aclImdb`.
 10. Move the extracted folder inside the `data/` directory within the downloaded repository.
 
 11. Modify the `DATA_DIR` path in `producer/produce.py` as required. Be sure to also adapt the `AWS_REGION` constant if you are deploying this in a region other than `us-east-1`.
