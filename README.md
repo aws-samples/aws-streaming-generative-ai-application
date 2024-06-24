@@ -29,7 +29,6 @@ To gain access to the OpenSearch Dashboard, we need to use a bastion host that i
 * Model access to Anthropic's Claude 3 Haiku model. For setup instructions, refer to [Add model access](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html) in the documentation of Amazon Bedrock.
 * [Large Movie Review Dataset](https://ai.stanford.edu/~amaas/data/sentiment/)
 
-
     *Andrew L. Maas, Raymond E. Daly, Peter T. Pham, Dan Huang, Andrew Y. Ng, and Christopher Potts. (2011). [Learning Word Vectors for Sentiment Analysis](https://ai.stanford.edu/~amaas/papers/wvSent_acl2011.pdf). The 49th Annual Meeting of the Association for Computational Linguistics (ACL 2011)*
 
 ## Getting Started
@@ -138,13 +137,13 @@ Invoke-RestMethod -Method Put -Uri $url -Headers $headers -Body $body -SkipCerti
 - Open your browser and access `https://localhost:8157/_dashboards`
 - Open the menu and click on *Dashboards Management* under *Management*, then click on *Saved Objects* and import *export.ndjson* which can be found in the `resources` folder.
 
-8. Download a subset of the the Amazon Review Data [here](https://jmcauley.ucsd.edu/data/amazon_v2/categoryFilesSmall/Movies_and_TV_5.json.gz). The category is `Movie and TV`. 
+8. Download the review data [here]([https://jmcauley.ucsd.edu/data/amazon_v2/categoryFilesSmall/Movies_and_TV_5.json.gz](https://ai.stanford.edu/~amaas/data/sentiment/)).
+9. After the download is complete, extract the `.tar.gz` file to retrieve the folder named `aclImdb 3` or similar that contains the review data.
+10. Move the extracted folder inside the `data/` directory within the downloaded repository.
 
-9. Move the downloaded dataset called `Movies_and_TV_5.json.gz` inside the `data/` directory within the downloaded repository. 
+11. Modify the `DATA_DIR` path in `producer/produce.py` as required. Be sure to also adapt the `AWS_REGION` constant if you are deploying this in a region other than `us-east-1`.
 
-10. Modify the `DATA_DIR` path in `producer/produce.py` as required. Be sure to also adapt the `AWS_REGION` constant if you are deploying this in a region other than `us-east-1`.
-
-11. Install the required dependencies and start generating data:
+12. Install the required dependencies and start generating data:
 
 ```bash
 cd producer 
